@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Restaurant Finder</title>
+  <link rel="stylesheet" href="./STYLES.CSS">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <div class="logo">
+        <h1>Restaurant<span class="accent">Finder</span></h1>
+      </div>
+      <div class="nav-icons">
+        <button id="home-button" class="icon-button nav-button active" data-section="home">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+        </button>
+        <button id="favorites-button" class="icon-button nav-button" data-section="favorites">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"></path></svg>
+        </button>
+
+        <button id="reservations-button" class="icon-button nav-button" data-section="reservations">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M6 2H18C18.552 2 19 2.448 19 3V21C19 21.552 18.552 22 18 22H6C5.448 22 5 21.552 5 21V3C5 2.448 5.448 2 6 2Z" /> <!-- Notepad outline -->
+            <path d="M10 6H14" /> <!-- Line 1 in the notepad -->
+            <path d="M10 10H14" /> <!-- Line 2 in the notepad -->
+            <path d="M10 14H14" /> <!-- Line 3 in the notepad -->
+          </svg>
+        </button>
+        
+
+        <button id="profile-button" class="icon-button nav-button" data-section="profile">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="5"></circle><path d="M20 21a8 8 0 1 0-16 0"></path></svg>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Content Sections -->
+  <div class="container">
+    <!-- Home Section -->
+    <div id="home-section" class="section section-container">
+      <div class="hero">
+        <h1>Find your table for any occasion</h1>
+        <p>Discover amazing restaurants and book your table instantly</p>
+        
+        <!-- Search Bar -->
+        <div class="search-bar">
+          <div class="search-input-container">
+            <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+            <input type="text" id="search-input" placeholder="Search for restaurants, cuisines, locations...">
+          </div>
+        </div>
+      </div>
+      
+      <!-- Categories -->
+      <div class="categories">
+        <div class="category-buttons" id="category-buttons">
+          <button class="category-button active" data-category="all">
+            <div class="category-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="16"></line><line x1="8" y1="12" x2="16" y2="12"></line></svg>
+            </div>
+            <span>All</span>
+          </button>
+          <button class="category-button" data-category="Italian">
+            <div class="category-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 11h.01"></path><path d="M11 15h.01"></path><path d="M16 16h.01"></path><path d="m2 16 20 6-6-20A20 20 0 0 0 2 16Z"></path><path d="M5.71 17.11a17.04 17.04 0 0 1 11.4-11.4"></path></svg>
+            </div>
+            <span>Italian</span>
+          </button>
+          <button class="category-button" data-category="Mexican">
+            <div class="category-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 13.87A4 4 0 0 1 7.41 6a5.11 5.11 0 0 1 1.05-1.54 5 5 0 0 1 7.08 0A5.11 5.11 0 0 1 16.59 6 4 4 0 0 1 18 13.87V21H6Z"></path><line x1="6" y1="17" x2="18" y2="17"></line></svg>
+            </div>
+            <span>Mexican</span>
+          </button>
+          <button class="category-button" data-category="Asian">
+            <div class="category-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 22 16 8"></path><path d="M2.5 13 12 2.5C16.17 6.67 7.17 15.67 11.33 19.83l8.5-8.5"></path></svg>
+            </div>
+            <span>Asian</span>
+          </button>
+          <button class="category-button" data-category="Vegetarian">
+            <div class="category-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 22a10 10 0 0 1 20 0"></path><path d="M16 8a7 7 0 0 0-14 0"></path><path d="M12 2v10"></path><path d="M12 12c-1.5 0-3 .5-3 2"></path></svg>
+            </div>
+            <span>Vegetarian</span>
+          </button>
+        </div>
+      </div>
+      
+      <!-- Vegetarian Filter -->
+      <div class="veg-filter">
+        <div class="veg-indicator">
+          <span class="veg-icon"></span>
+          <span>Vegetarian Only</span>
+        </div>
+        <label class="veg-toggle">
+          <input type="checkbox" id="veg-toggle">
+          <span class="veg-slider"></span>
+        </label>
+      </div>
+      
+      <!-- Restaurants -->
+      <div class="restaurants">
+        <h2>Popular Restaurants</h2>
+        <div class="restaurant-grid" id="restaurant-list">
+          <!-- Restaurant Card 1 -->
+          <div class="restaurant-card" data-id="1" data-categories="Italian,Pizza" data-vegetarian="false">
+            <div class="restaurant-image" style="background-image: url('https://images.unsplash.com/photo-1555396273-367ea4eb4db5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80')">
+              <div class="badge open-badge">Open now</div>
+              <div class="badge rating-badge">4.8</div>
+              <button class="favorite-button">♡</button>
+            </div>
+            <div class="restaurant-content">
+              <h3 class="restaurant-name">Pasta Palace</h3>
+              <div class="restaurant-address">123 Main St, Anytown</div>
+              <div class="restaurant-meta">
+                <div class="restaurant-categories">Italian, Pizza</div>
+                <div class="restaurant-price">$$</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Restaurant Card 2 -->
+          <div class="restaurant-card" data-id="2" data-categories="Mexican,Tacos" data-vegetarian="false">
+            <div class="restaurant-image" style="background-image: url('https://images.unsplash.com/photo-1565299585323-38d6b0865b47?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=780&q=80')">
+              <div class="badge open-badge">Open now</div>
+              <div class="badge rating-badge">4.5</div>
+              <button class="favorite-button">♡</button>
+            </div>
+            <div class="restaurant-content">
+              <h3 class="restaurant-name">Taco Town</h3>
+              <div class="restaurant-address">456 Oak Ave, Somecity</div>
+              <div class="restaurant-meta">
+                <div class="restaurant-categories">Mexican, Tacos</div>
+                <div class="restaurant-price">$</div>
+              </div>
+            </div>
+          </div>
+          <!-- Existing restaurant cards above -->
+
+<!-- Restaurant Card 4 (Asian) -->
+<div class="restaurant-card" data-id="4" data-categories="Asian,Sushi" data-vegetarian="false">
+  <div class="restaurant-image" style="background-image: url('./asian\ food.jpeg')">
+    <div class="badge open-badge">Open now</div>
+    <div class="badge rating-badge">4.6</div>
+    <button class="favorite-button">♡</button>
+  </div>
+  <div class="restaurant-content">
+    <h3 class="restaurant-name">Sushi Central</h3>
+    <div class="restaurant-address">101 Sakura Lane, Eastville</div>
+    <div class="restaurant-meta">
+      <div class="restaurant-categories">Asian, Sushi</div>
+      <div class="restaurant-price">$$$</div>
+    </div>
+  </div>
+</div>
+
+          <!-- Restaurant Card 3 (Vegetarian) -->
+          <div class="restaurant-card" data-id="3" data-categories="Vegetarian,Healthy" data-vegetarian="true">
+            <div class="restaurant-image" style="background-image: url('https://images.unsplash.com/photo-1512621776951-a57141f2eefd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80')">
+              <div class="badge open-badge">Open now</div>
+              <div class="badge rating-badge">4.7</div>
+              <div class="veg-badge">
+                <span class="veg-badge-icon"></span>
+                Vegetarian
+              </div>
+              <button class="favorite-button">♡</button>
+            </div>
+            <div class="restaurant-content">
+              <h3 class="restaurant-name">Green Garden</h3>
+              <div class="restaurant-address">789 Pine St, Greenville</div>
+              <div class="restaurant-meta">
+                <div class="restaurant-categories">Vegetarian, Healthy</div>
+                <div class="restaurant-price">$$</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Favorites Section -->
+    <div id="favorites-section" class="section section-container hidden">
+      <h2>Your Favorite Restaurants</h2>
+      <div class="empty-state">
+        <p>You haven't saved any favorites yet</p>
+        <button class="primary-button" onclick="document.getElementById('home-button').click()">Browse Restaurants</button>
+      </div>
+    </div>
+
+<!-- New Reservations Section -->
+<section id="reservations-section" class="section hidden">
+  <h2>Your Reservations</h2>
+  <div id="reservations-list"></div>
+</section>
+    
+
+    <section id="profile-section" class="section hidden">
+      <div class="login-container">
+        <h2>Login</h2>
+        <form id="login-form" class="login-form">
+          <label for="username">Username</label>
+          <input type="text" id="username" placeholder="Enter your username" required />
+    
+          <label for="password">Password</label>
+          <input type="password" id="password" placeholder="Enter your password" required />
+    
+          <button type="submit">Login</button>
+        </form>
+      </div>
+    </section>
+    
+  
+  <!-- Restaurant Modal -->
+  <div id="restaurant-modal" class="modal hidden">
+    <div class="modal-content">
+      <button id="close-modal" class="close-button">✕</button>
+      <div id="modal-image" class="modal-image"></div>
+      <div class="modal-info">
+        <h2 id="modal-name">Restaurant Name</h2>
+        <div id="modal-veg-indicator" class="veg-indicator modal-veg-indicator" style="display:none">
+          <span class="veg-icon"></span>
+          <span>Vegetarian Restaurant</span>
+        </div>
+        <div class="reservation-form">
+          <h3>Make a Reservation</h3>
+          <div class="form-group">
+            <label>Number of People</label>
+            <div class="counter-input">
+              <button id="decrease-persons" class="counter-button">-</button>
+              <span id="persons-count">2 people</span>
+              <button id="increase-persons" class="counter-button">+</button>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Time Slots</label>
+            <div class="time-slots">
+              <button class="time-slot">6:00 pm</button>
+              <button class="time-slot">6:30 pm</button>
+              <button class="time-slot">7:00 pm</button>
+              <button class="time-slot active">7:30 pm</button>
+              <button class="time-slot">8:00 pm</button>
+              <button class="time-slot">8:30 pm</button>
+            </div>
+          </div>
+          <button class="primary-button full-width">Book a Table</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="./script.js"></script>
+</body>
+</html>
